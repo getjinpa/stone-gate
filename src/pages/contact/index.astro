@@ -76,87 +76,14 @@ import { siteConfig } from '../../utils/config';
 
         <!-- Form column -->
         <div>
-          <div class="section-heading">
-            <span class="section-heading__kicker">Write to Us</span>
-            <h2 class="section-heading__title" style="font-size:1.75rem;">Send a Message</h2>
-          </div>
-
-          <form class="contact-form" name="contact" method="POST" action="#" novalidate>
-            <div class="form-group">
-              <label class="form-label" for="name">Your Name</label>
-              <input
-                class="form-input"
-                type="text"
-                id="name"
-                name="name"
-                autocomplete="name"
-                required
-                placeholder="Your full name"
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="email">Email Address</label>
-              <input
-                class="form-input"
-                type="email"
-                id="email"
-                name="email"
-                autocomplete="email"
-                required
-                placeholder="your@email.com"
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="subject">Subject</label>
-              <select class="form-select" id="subject" name="subject" required>
-                <option value="" disabled selected>Select a topic</option>
-                <option value="retreat">Retreat Registration</option>
-                <option value="visit">Visiting for Zazen</option>
-                <option value="residency">Residential Practice</option>
-                <option value="general">General Enquiry</option>
-                <option value="dana">Dana / Donation</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="practice">Practice Background (optional)</label>
-              <input
-                class="form-input"
-                type="text"
-                id="practice"
-                name="practice"
-                placeholder="e.g., Six months of weekly sitting, new to Zen"
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="message">Message</label>
-              <textarea
-                class="form-textarea"
-                id="message"
-                name="message"
-                required
-                placeholder="Write your message here..."
-              ></textarea>
-            </div>
-
-            <p class="form-note">
-              We read every message carefully and respond within three days. For urgent matters — such as arriving the same day — please call us directly.
+          <div class="contact-form-panel" style="background:var(--color-paper);border:1px solid var(--color-border);border-radius:8px;padding:2.5rem;">
+            <h3 style="font-family:var(--font-heading);font-size:1.3rem;font-weight:400;margin-bottom:1rem;">Send a Message</h3>
+            <p style="font-size:0.9rem;color:var(--color-stone);line-height:1.8;margin-bottom:1.5rem;">
+              The best way to reach Stone Gate Zendo is by email. We respond to all messages within three days.
             </p>
-
-            <button type="submit" class="btn btn--pine" style="width:100%;justify-content:center;">
-              Send Message
-            </button>
-          </form>
-
-          <div class="info-box" style="margin-top:2rem;">
-            <h3 class="info-box__title">Visiting Without Prior Contact</h3>
-            <p class="info-box__body">
-              You do not need to contact us before visiting for regularly scheduled zazen periods. Simply arrive ten minutes before the listed time, remove your shoes at the entrance, and follow those around you. Sunday morning sitting (9:00 am) is the best starting point for newcomers.
-            </p>
+            <a href="mailto:office@stonegate-zendo.org" class="btn btn--dark" style="display:inline-flex;align-items:center;gap:0.5rem;">
+              office@stonegate-zendo.org
+            </a>
           </div>
         </div>
 
