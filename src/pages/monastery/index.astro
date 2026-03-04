@@ -1,0 +1,230 @@
+---
+import Base from '../../layouts/Base.astro';
+import { withBase } from '../../utils/paths';
+---
+
+<Base
+  title="Monastery"
+  description="The history, buildings, teachers, and community life of Stone Gate Zendo — a Soto Zen monastery in Craftsbury Common, Vermont."
+>
+  <!-- ── Page Hero ─────────────────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-hero__kicker">About the Monastery</span>
+      <h1 class="page-hero__title">Stone Gate</h1>
+      <p class="page-hero__lead">
+        Founded in 1987, Stone Gate Zendo sits on forty acres of forest and meadow in the Northeast Kingdom of Vermont. It is a small monastery — deliberately so. Intimacy is part of the practice.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── History ───────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="zendo-block">
+        <div class="zendo-block__image">
+          <img
+            src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=900&q=80"
+            alt="Old wooden gate in a forest, stone path leading through"
+            class="zendo-block__img"
+            loading="lazy"
+            decoding="async"
+            width="900"
+            height="600"
+          />
+        </div>
+        <div class="zendo-block__text">
+          <span class="zendo-block__kicker">Founded 1987</span>
+          <h2 class="zendo-block__title">A Place of Beginning</h2>
+          <p class="zendo-block__body">
+            Stone Gate was established in 1987 by Roshi Eleanor Hayes, who had trained for twelve years at Eiheiji Monastery in Japan before returning to Vermont with transmission from her teacher, the late Yamamoto Roshi.
+          </p>
+          <p class="zendo-block__body" style="margin-top:1rem;">
+            She found the land in winter — forty acres of second-growth forest surrounding a farmhouse that had stood since 1892. "The stone gate at the edge of the road," she wrote in the monastery's first journal, "was already there. We simply walked through it."
+          </p>
+          <p class="zendo-block__body" style="margin-top:1rem;">
+            The original community of seven residents has grown and contracted over nearly four decades. Today, twelve residents live and practice here year-round, welcoming several hundred visitors annually.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── The Zendo ─────────────────────────────────────────────────── -->
+  <section class="section section--paper" style="padding:0;">
+    <div class="container" style="padding:0;max-width:100%;">
+      <div class="zendo-block zendo-block--reverse">
+        <div class="zendo-block__image">
+          <img
+            src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=900&q=80"
+            alt="Empty meditation hall with wooden floor, natural light"
+            class="zendo-block__img"
+            loading="lazy"
+            decoding="async"
+            width="900"
+            height="600"
+          />
+        </div>
+        <div class="zendo-block__text">
+          <span class="zendo-block__kicker">The Heart</span>
+          <h2 class="zendo-block__title">The Zendo</h2>
+          <p class="zendo-block__body">
+            The main meditation hall was built by the community in 1991 from Vermont white pine. It seats thirty-two practitioners on tan — the wide wooden platforms that line both sides of the hall. In the center stands the altar: a simple wooden table bearing a stone Buddha, incense, and a candle.
+          </p>
+          <p class="zendo-block__body" style="margin-top:1rem;">
+            The zendo faces east, and in morning zazen, as winter passes into spring, the first light enters through the east windows and crosses the floor very slowly. There is nothing to do but notice.
+          </p>
+          <p class="zendo-block__body" style="margin-top:1rem;">
+            The bell is cast bronze, brought from Kyoto. It has been struck every morning for thirty-five years.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Kitchen & Garden ──────────────────────────────────────────── -->
+  <section class="section" style="padding:0;">
+    <div class="container" style="padding:0;max-width:100%;">
+      <div class="zendo-block">
+        <div class="zendo-block__image">
+          <img
+            src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&q=80"
+            alt="Kitchen garden with raised beds in morning light"
+            class="zendo-block__img"
+            loading="lazy"
+            decoding="async"
+            width="900"
+            height="600"
+          />
+        </div>
+        <div class="zendo-block__text">
+          <span class="zendo-block__kicker">Nourishment</span>
+          <h2 class="zendo-block__title">Kitchen &amp; Garden</h2>
+          <p class="zendo-block__body">
+            The kitchen garden produces nearly half the vegetables consumed by the community from June through October: kale, squash, beans, carrots, lettuces, and the parsnips that overwinter and sweeten in the frost. A small apple orchard provides fruit through December.
+          </p>
+          <p class="zendo-block__body" style="margin-top:1rem;">
+            All meals at Stone Gate are vegetarian. The tenzo — the head cook, a position of great responsibility in Zen monasteries — holds the kitchen with the same attention as the zendo. To cook well here means to bring the whole self to the meal, from the garden to the bowl.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Guest Cabins ──────────────────────────────────────────────── -->
+  <section class="section section--paper" style="padding:0;">
+    <div class="container" style="padding:0;max-width:100%;">
+      <div class="zendo-block zendo-block--reverse">
+        <div class="zendo-block__image">
+          <img
+            src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=900&q=80"
+            alt="Small wooden cabin in a pine forest, simple and still"
+            class="zendo-block__img"
+            loading="lazy"
+            decoding="async"
+            width="900"
+            height="600"
+          />
+        </div>
+        <div class="zendo-block__text">
+          <span class="zendo-block__kicker">Guest Quarters</span>
+          <h2 class="zendo-block__title">The Cabins</h2>
+          <p class="zendo-block__body">
+            Five small cabins sit among the pines to the east of the main house, each sleeping one or two practitioners. They are plain: a wooden platform bed, a desk, a small window facing the forest. Heat comes from a wood stove; there is no electricity. Guests bring a flashlight.
+          </p>
+          <p class="zendo-block__body" style="margin-top:1rem;">
+            In the main house, the Stone Room accommodates those unable to manage the path to the cabins in winter. All sleeping quarters are quiet — sound carries through wood in ways that teach us something about interdependence.
+          </p>
+          <p class="zendo-block__body" style="margin-top:1rem;">
+            Retreat fees include lodging. Cabins are assigned according to need and arrival date.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Teachers ──────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-heading__kicker">Guidance</span>
+        <h2 class="section-heading__title">Teachers</h2>
+        <p class="section-heading__subtitle">
+          Stone Gate's two resident teachers hold the community in their practice and offer formal dharma instruction, teisho, and dokusan throughout the year.
+        </p>
+      </div>
+
+      <div class="teachers-grid">
+        <div class="teacher-card">
+          <img
+            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80&fit=crop&crop=faces"
+            alt="Portrait of Roshi Jane Whitfield"
+            class="teacher-card__photo"
+            loading="lazy"
+            decoding="async"
+            width="200"
+            height="200"
+          />
+          <div>
+            <span class="teacher-card__kicker">Abbess · Dharma Teacher</span>
+            <h3 class="teacher-card__name">Roshi Jane Whitfield</h3>
+            <p class="teacher-card__bio">
+              Jane Whitfield received dharma transmission from Roshi Eleanor Hayes in 2004, after seventeen years of residential practice at Stone Gate. She has led the monastery since Hayes Roshi's retirement in 2011. Her teaching emphasizes Dogen's texts, the intimacy of dokusan, and the practice of formal daily life. She leads all multi-day sesshins and offers teisho on Tuesday evenings.
+            </p>
+          </div>
+        </div>
+
+        <div class="teacher-card">
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80&fit=crop&crop=faces"
+            alt="Portrait of Sensei David Park"
+            class="teacher-card__photo"
+            loading="lazy"
+            decoding="async"
+            width="200"
+            height="200"
+          />
+          <div>
+            <span class="teacher-card__kicker">Senior Teacher</span>
+            <h3 class="teacher-card__name">Sensei David Park</h3>
+            <p class="teacher-card__bio">
+              David Park came to Zen through a decade of Korean Buddhist practice before meeting Roshi Whitfield at a retreat in 2009. He received dharma entrustment in 2019. He teaches with particular care for beginners and those new to formal practice, and has developed Stone Gate's Introduction to Zen program over the past four years. He leads Thursday evening dharma talks and all introductory retreats.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Resident Community ────────────────────────────────────────── -->
+  <section class="section section--paper">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <span class="section-heading__kicker">Sangha</span>
+        <h2 class="section-heading__title">Community Life</h2>
+      </div>
+
+      <div class="two-col-text" style="max-width:900px;margin-inline:auto;">
+        <div>
+          <p class="prose">
+            Twelve residents live at Stone Gate year-round. They come from different backgrounds — a retired physician, a former schoolteacher, a potter, a software engineer who left his career at forty — but share the commitment to full residential practice. Each resident holds a practice responsibility: a role in the kitchen, the garden, the maintenance of the buildings, or the care of the guest program.
+          </p>
+          <p class="prose">
+            Residents commit to a minimum of one year of residential practice, with the possibility of extending indefinitely. Those wishing to become residents are asked to first complete two multi-day sesshins and to write to the abbess describing their practice history and intention.
+          </p>
+        </div>
+        <div>
+          <p class="prose">
+            Beyond the resident community, Stone Gate is supported by a wider sangha of several hundred practitioners who visit for regular sittings, retreats, and the quarterly dharma study days. Many have practiced here for decades, returning season after season as the trees grow taller and the bell rings on.
+          </p>
+          <p class="prose">
+            The community does not seek to grow large. The zendo seats thirty-two. The cabins sleep ten. There is intention in this smallness. Practice deepens in intimacy, and intimacy requires limits.
+          </p>
+          <div style="margin-top:1.5rem;">
+            <a href={withBase('/contact/')} class="btn btn--dark">Enquire About Residency</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

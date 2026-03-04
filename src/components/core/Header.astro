@@ -1,0 +1,115 @@
+---
+import { withBase, stripBase } from '../../utils/paths';
+
+interface Props {
+  siteConfig: any;
+}
+
+const { siteConfig } = Astro.props;
+const nav = siteConfig.navigation.main as Array<{ label: string; url: string }>;
+const currentPath = stripBase(Astro.url.pathname);
+---
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <div class="site-header__inner">
+      <!-- Logo -->
+      <a href={withBase('/')} class="site-header__logo" aria-label={siteConfig.site.title + ' — home'}>
+        Stone Gate Zendo
+        <span>Soto Zen · Vermont</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="site-nav site-nav--desktop" aria-label="Main navigation">
+        {nav.map(item => {
+          const href = withBase(item.url);
+          const isCurrent = item.url === '/'
+            ? currentPath === '/'
+            : currentPath.startsWith(item.url);
+          return (
+            <a
+              href={href}
+              class="site-nav__link"
+              aria-current={isCurrent ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </nav>
+
+      <!-- Mobile toggle -->
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="Open navigation menu"
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav overlay -->
+<nav
+  class="site-nav site-nav--mobile"
+  id="mobile-nav"
+  aria-label="Mobile navigation"
+  aria-hidden="true"
+>
+  {nav.map(item => {
+    const href = withBase(item.url);
+    const isCurrent = item.url === '/'
+      ? currentPath === '/'
+      : currentPath.startsWith(item.url);
+    return (
+      <a
+        href={href}
+        class="site-nav__link"
+        aria-current={isCurrent ? 'page' : undefined}
+      >
+        {item.label}
+      </a>
+    );
+  })}
+</nav>
+
+<script>
+  const toggle = document.getElementById('nav-toggle') as HTMLButtonElement;
+  const mobileNav = document.getElementById('mobile-nav') as HTMLElement;
+
+  if (toggle && mobileNav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      mobileNav.setAttribute('aria-hidden', String(isOpen));
+      mobileNav.classList.toggle('is-open', !isOpen);
+      document.body.style.overflow = !isOpen ? 'hidden' : '';
+    });
+
+    // Close on link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        mobileNav.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        mobileNav.classList.remove('is-open');
+        document.body.style.overflow = '';
+        toggle.focus();
+      }
+    });
+  }
+</script>

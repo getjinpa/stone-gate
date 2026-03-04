@@ -1,0 +1,166 @@
+---
+import Base from '../../layouts/Base.astro';
+import { siteConfig } from '../../utils/config';
+---
+
+<Base
+  title="Contact"
+  description="Find Stone Gate Zendo in Craftsbury Common, Vermont — directions, contact information, and a form to reach us."
+>
+  <!-- ── Page Hero ─────────────────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-hero__kicker">Reach Us</span>
+      <h1 class="page-hero__title">Contact</h1>
+      <p class="page-hero__lead">
+        We welcome enquiries about visiting, retreats, residential practice, and the monastery. We respond to all messages within three days.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Contact Grid ──────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Info column -->
+        <div>
+          <div class="contact-info__item">
+            <span class="contact-info__label">Address</span>
+            <address class="contact-info__value" style="font-family:var(--font-heading);font-size:1.05rem;font-style:normal;line-height:1.7;">
+              Stone Gate Zendo<br />
+              147 Ridge Road<br />
+              Craftsbury Common, VT 05827<br />
+              United States
+            </address>
+          </div>
+
+          <div class="contact-info__item">
+            <span class="contact-info__label">Telephone</span>
+            <p class="contact-info__value">
+              <a href="tel:+18025550142">{siteConfig.contact.phone}</a>
+            </p>
+            <p style="font-size:0.825rem;color:var(--color-muted);margin-top:0.25rem;font-weight:300;">
+              Answered between 9:00 am and 4:00 pm, Tuesday through Saturday.
+            </p>
+          </div>
+
+          <div class="contact-info__item">
+            <span class="contact-info__label">Email</span>
+            <p class="contact-info__value">
+              <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
+            </p>
+          </div>
+
+          <div class="contact-info__item">
+            <span class="contact-info__label">For Retreat Registration</span>
+            <p class="contact-info__value">
+              <a href="mailto:retreats@stonegatezendo.org">retreats@stonegatezendo.org</a>
+            </p>
+          </div>
+
+          <!-- Directions -->
+          <div class="contact-directions">
+            <h2 class="contact-directions__title">Getting Here</h2>
+            <p class="contact-directions__body">
+              Stone Gate Zendo is located on Ridge Road, two miles north of Craftsbury Common village. From Burlington (approximately 90 minutes): take I-89 North to Exit 10 (Waterbury), then Route 2 East to Morrisville, Route 15 East to Hardwick, and Route 14 North through Craftsbury to Craftsbury Common. At the village green, bear right onto Ridge Road. The monastery gate — a stone pillars entrance — is on the left after 1.8 miles.
+            </p>
+            <p class="contact-directions__body" style="margin-top:0.75rem;">
+              From Boston (approximately 3 hours): take I-93 North to I-91 North, Exit 23 (St. Johnsbury), then Route 2 West to Hardwick, Route 14 North as above.
+            </p>
+            <p class="contact-directions__body" style="margin-top:0.75rem;">
+              <strong style="font-weight:500;">By public transit:</strong> The closest Amtrak station is White River Junction, VT (2 hours). Bus service (Greyhound / Vermont Translines) runs to Hardwick, from which a taxi or arranged pickup is necessary. If you are traveling without a car, please contact us — we can sometimes arrange transportation from Hardwick for retreat participants.
+            </p>
+          </div>
+        </div>
+
+        <!-- Form column -->
+        <div>
+          <div class="section-heading">
+            <span class="section-heading__kicker">Write to Us</span>
+            <h2 class="section-heading__title" style="font-size:1.75rem;">Send a Message</h2>
+          </div>
+
+          <form class="contact-form" name="contact" method="POST" action="#" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="name">Your Name</label>
+              <input
+                class="form-input"
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+                placeholder="Your full name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+                placeholder="your@email.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="subject">Subject</label>
+              <select class="form-select" id="subject" name="subject" required>
+                <option value="" disabled selected>Select a topic</option>
+                <option value="retreat">Retreat Registration</option>
+                <option value="visit">Visiting for Zazen</option>
+                <option value="residency">Residential Practice</option>
+                <option value="general">General Enquiry</option>
+                <option value="dana">Dana / Donation</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="practice">Practice Background (optional)</label>
+              <input
+                class="form-input"
+                type="text"
+                id="practice"
+                name="practice"
+                placeholder="e.g., Six months of weekly sitting, new to Zen"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea
+                class="form-textarea"
+                id="message"
+                name="message"
+                required
+                placeholder="Write your message here..."
+              ></textarea>
+            </div>
+
+            <p class="form-note">
+              We read every message carefully and respond within three days. For urgent matters — such as arriving the same day — please call us directly.
+            </p>
+
+            <button type="submit" class="btn btn--pine" style="width:100%;justify-content:center;">
+              Send Message
+            </button>
+          </form>
+
+          <div class="info-box" style="margin-top:2rem;">
+            <h3 class="info-box__title">Visiting Without Prior Contact</h3>
+            <p class="info-box__body">
+              You do not need to contact us before visiting for regularly scheduled zazen periods. Simply arrive ten minutes before the listed time, remove your shoes at the entrance, and follow those around you. Sunday morning sitting (9:00 am) is the best starting point for newcomers.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Base>

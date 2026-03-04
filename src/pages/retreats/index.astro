@@ -1,0 +1,202 @@
+---
+import Base from '../../layouts/Base.astro';
+import { withBase } from '../../utils/paths';
+
+interface Retreat {
+  title: string;
+  startDate: string;
+  endDate: string;
+  month: string;
+  day: string;
+  year: string;
+  duration: string;
+  teacher: string;
+  cost: string;
+  costNote: string;
+  description: string;
+  tag: string;
+  spots?: string;
+}
+
+const retreats: Retreat[] = [
+  {
+    title: 'Spring Sesshin — Seven Days of Silence',
+    startDate: '2026-04-14',
+    endDate: '2026-04-20',
+    month: 'April',
+    day: '14–20',
+    year: '2026',
+    duration: '7 days',
+    teacher: 'Roshi Jane Whitfield',
+    cost: '$650',
+    costNote: 'Dana sliding scale available',
+    description: 'Our flagship spring sesshin: seven days of intensive sitting, kinhin, service, dokusan, and teisho. Silence is maintained from the opening bell through the closing ceremony. Designed for practitioners with at least six months of regular sitting experience.',
+    tag: 'Intensive',
+    spots: '18 spots — 4 remaining',
+  },
+  {
+    title: 'Introduction to Zen — Weekend Retreat',
+    startDate: '2026-05-08',
+    endDate: '2026-05-10',
+    month: 'May',
+    day: '8–10',
+    year: '2026',
+    duration: 'Weekend',
+    teacher: 'Sensei David Park',
+    cost: '$195',
+    costNote: 'Includes meals and lodging',
+    description: 'A gentle introduction to the Soto Zen tradition. We cover the basics of zazen posture and breath, the form of the zendo, and how to enter a life of formal practice. Suitable for absolute beginners and those returning after years away.',
+    tag: 'Beginner',
+    spots: '12 spots remaining',
+  },
+  {
+    title: 'Shobogenzo Study — Genjo Koan',
+    startDate: '2026-06-19',
+    endDate: '2026-06-21',
+    month: 'June',
+    day: '19–21',
+    year: '2026',
+    duration: 'Weekend',
+    teacher: 'Roshi Jane Whitfield',
+    cost: '$220',
+    costNote: 'Text provided',
+    description: 'A close reading of Dogen\'s Genjo Koan, one of the most essential texts in all of Zen. We read slowly, sit together between study periods, and allow the text to open rather than explain. Prior familiarity with zazen recommended.',
+    tag: 'Study',
+  },
+  {
+    title: 'One-Day Sitting — Midsummer',
+    startDate: '2026-07-12',
+    endDate: '2026-07-12',
+    month: 'July',
+    day: '12',
+    year: '2026',
+    duration: '1 day',
+    teacher: 'Sensei David Park',
+    cost: '$65',
+    costNote: 'Lunch included',
+    description: 'A single day of sustained zazen from early morning to late afternoon. Six periods of sitting, kinhin, morning and afternoon service, a brief teisho, and a communal meal. Open to all practitioners. No registration deadline.',
+    tag: 'One Day',
+  },
+  {
+    title: 'Summer Sesshin — Five Days',
+    startDate: '2026-08-10',
+    endDate: '2026-08-14',
+    month: 'August',
+    day: '10–14',
+    year: '2026',
+    duration: '5 days',
+    teacher: 'Roshi Jane Whitfield',
+    cost: '$480',
+    costNote: 'Dana scale available',
+    description: 'Five days of sesshin practice held during the height of the Vermont summer. The schedule mirrors our full sesshin rhythm. Work practice takes place in the garden in the late afternoon light. For practitioners with retreat experience.',
+    tag: 'Intensive',
+  },
+  {
+    title: 'Autumn Rohatsu — Eight Days',
+    startDate: '2026-11-30',
+    endDate: '2026-12-07',
+    month: 'Dec',
+    day: '30 Nov–7',
+    year: '2026',
+    duration: '8 days',
+    teacher: 'Roshi Jane Whitfield',
+    cost: '$720',
+    costNote: 'No one turned away for lack of funds',
+    description: 'Rohatsu marks the Buddha\'s awakening. Our most rigorous annual retreat: eight days, extended sitting periods, minimal sleep, and the collective intensity of a sangha that holds each other in their resolve. For experienced practitioners only. Application required.',
+    tag: 'Intensive',
+    spots: 'Application required',
+  },
+];
+---
+
+<Base
+  title="Retreats"
+  description="Upcoming sesshins, one-day sittings, and study retreats at Stone Gate Zendo — from weekend introductions to seven-day intensives."
+>
+  <!-- ── Page Hero ─────────────────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-hero__kicker">Schedule</span>
+      <h1 class="page-hero__title">Retreats &amp; Sesshins</h1>
+      <p class="page-hero__lead">
+        Sesshins are periods of intensive retreat — the word means "to touch the heart-mind." We offer retreats throughout the year, from single days to eight-day intensives. All are welcome according to their level of experience.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Retreat List ───────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="retreat-list">
+        {retreats.map(retreat => (
+          <article class="retreat-item">
+            <!-- Date column -->
+            <div class="retreat-item__date-col">
+              <span class="retreat-item__month">{retreat.month}</span>
+              <span class="retreat-item__day">{retreat.day}</span>
+              <span class="retreat-item__year">{retreat.year}</span>
+              <span class="retreat-item__duration">{retreat.duration}</span>
+            </div>
+
+            <!-- Body -->
+            <div class="retreat-item__body">
+              <div class="flex-center" style="margin-bottom:0.4rem;gap:0.6rem;">
+                <h2 class="retreat-item__title">{retreat.title}</h2>
+                <span class="tag tag--pine">{retreat.tag}</span>
+              </div>
+              <span class="retreat-item__teacher">Led by {retreat.teacher}</span>
+              <p class="retreat-item__desc">{retreat.description}</p>
+              {retreat.spots && (
+                <p style="margin-top:0.75rem;font-size:0.8rem;font-weight:500;color:var(--color-moss);">{retreat.spots}</p>
+              )}
+            </div>
+
+            <!-- CTA -->
+            <div class="retreat-item__cta">
+              <div>
+                <span class="retreat-item__cost-label">Cost</span>
+                <span class="retreat-item__cost">{retreat.cost}</span>
+                <span style="display:block;font-size:0.7rem;color:var(--color-muted);margin-top:0.2rem;">{retreat.costNote}</span>
+              </div>
+              <a href={withBase('/contact/')} class="btn btn--dark" style="margin-top:1rem;white-space:nowrap;">Register</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Registration Info ─────────────────────────────────────────── -->
+  <section class="section section--paper">
+    <div class="container">
+      <div class="two-col-text" style="max-width:900px;margin-inline:auto;">
+        <div class="info-box">
+          <h3 class="info-box__title">How to Register</h3>
+          <p class="info-box__body">
+            To register for a sesshin or retreat, write to us at <a href="mailto:info@stonegatezendo.org" style="color:var(--color-pine);">info@stonegatezendo.org</a> with the retreat title, your contact information, and a brief note about your practice background. We respond within three days and will send a confirmation with further instructions.
+          </p>
+          <p class="info-box__body" style="margin-top:0.75rem;">
+            A deposit of $75 holds your place. The balance is due one week before arrival.
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h3 class="info-box__title">Dana &amp; Financial Assistance</h3>
+          <p class="info-box__body">
+            The dharma is freely offered. Retreat costs cover meals, lodging, and the basic operating expenses of the monastery. We maintain a dana fund to support those for whom the suggested cost is a genuine obstacle. If cost is a concern, please mention it in your registration email — it will not affect our welcome.
+          </p>
+          <p class="info-box__body" style="margin-top:0.75rem;">
+            Dana offerings in addition to retreat fees are received with gratitude and sustain the monastery between seasons.
+          </p>
+        </div>
+      </div>
+
+      <div class="info-box" style="margin-top:2rem;max-width:900px;margin-inline:auto;">
+        <h3 class="info-box__title">What to Bring</h3>
+        <p class="info-box__body">
+          Simple, dark-colored clothing suitable for sitting: loose trousers, a plain shirt, a warm layer for early mornings. Cushions and mats are provided, though you are welcome to bring your own. Leave fragrance, electronics, and books other than a dharma text behind. A notebook is welcome.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

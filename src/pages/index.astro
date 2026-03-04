@@ -1,0 +1,145 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../utils/paths';
+import { siteConfig } from '../utils/config';
+---
+
+<Base
+  title={undefined}
+  description="A Soto Zen monastery in the Green Mountains of Vermont — offering zazen, sesshins, and a life rooted in practice."
+>
+  <!-- ── Hero ─────────────────────────────────────────────────────── -->
+  <section class="hero" aria-label="Welcome to Stone Gate Zendo">
+    <div class="hero__bg" role="img" aria-label="Mountain forest at dawn"></div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content">
+      <span class="hero__kicker">Stone Gate Zendo · Vermont</span>
+      <h1 class="hero__title">Sit. Breathe.<br />Be still.</h1>
+      <p class="hero__subtitle">
+        A Soto Zen monastery in the Green Mountains —<br />
+        practice, community, and the ordinary extraordinary life.
+      </p>
+      <div class="hero__actions">
+        <a href={withBase('/practice/')} class="btn btn--light">Begin Practice</a>
+        <a href={withBase('/retreats/')} class="btn btn--light">Next Sesshin</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="hero__scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- ── What is Zazen? ────────────────────────────────────────────── -->
+  <section class="intro-section section">
+    <div class="container">
+      <div class="intro-section__inner">
+        <h2 class="intro-section__title">What is Zazen?</h2>
+        <div class="divider"></div>
+        <p class="intro-section__body">
+          Zazen is simply sitting — upright, still, awake. Not trying to achieve anything. Not trying to stop anything. The practice is the expression of our original nature, complete as it is. Dogen Zenji called this <em>shikantaza</em>: just sitting, wholeheartedly, with nothing left over.
+        </p>
+        <p class="intro-section__body" style="margin-top:1.25rem;">
+          At Stone Gate, we practice in the Soto Zen tradition, following the guidance of the Japanese ancestors and the lineage transmitted through our teachers. Zazen is available to all — no experience needed, no particular belief required.
+        </p>
+        <a href={withBase('/practice/')} class="btn btn--dark" style="margin-top:2rem;">Learn to Sit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Three Pillars ────────────────────────────────────────────── -->
+  <section class="pillars section" aria-label="Three pillars of practice">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <span class="section-heading__kicker">Life at the monastery</span>
+        <h2 class="section-heading__title">Three Pillars</h2>
+      </div>
+      <div class="pillars__grid">
+        <div class="pillar">
+          <span class="pillar__icon" aria-hidden="true">◯</span>
+          <h3 class="pillar__title">Zazen</h3>
+          <p class="pillar__body">
+            Twice daily, we gather in the zendo to sit together in silence. Zazen is the heart of Soto Zen — formal yet intimate, structured yet open. The bell sounds. We bow. We sit.
+          </p>
+        </div>
+        <div class="pillar">
+          <span class="pillar__icon" aria-hidden="true">⊕</span>
+          <h3 class="pillar__title">Dharma Study</h3>
+          <p class="pillar__body">
+            Dogen's <em>Shobogenzo</em>, the ancestral teachings, teisho by the roshi — study clarifies and deepens sitting. Understanding and practice are not two things.
+          </p>
+        </div>
+        <div class="pillar">
+          <span class="pillar__icon" aria-hidden="true">⌂</span>
+          <h3 class="pillar__title">Community Life</h3>
+          <p class="pillar__body">
+            Cooking, cleaning, gardening, work practice — the whole of daily life becomes the zendo. We practice together, eat together, and hold each other's intention.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Next Sesshin Callout ──────────────────────────────────────── -->
+  <section class="sesshin-callout" aria-label="Upcoming sesshin">
+    <div class="container">
+      <div class="sesshin-callout__inner">
+        <div>
+          <span class="sesshin-callout__label">Next Retreat</span>
+          <h2 class="sesshin-callout__title">Spring Sesshin — Seven Days of Silence</h2>
+          <p class="sesshin-callout__meta">April 14–20, 2026 · Led by Roshi Jane Whitfield · Registration open</p>
+        </div>
+        <a href={withBase('/retreats/')} class="btn btn--pine">View All Retreats</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Quote ────────────────────────────────────────────────────── -->
+  <section class="quote-section section">
+    <div class="container">
+      <div class="quote-section__inner">
+        <span class="quote-section__mark" aria-hidden="true">"</span>
+        <blockquote>
+          <p class="quote-section__text">
+            To study the self is to forget the self. To forget the self is to be enlightened by all things.
+          </p>
+          <footer class="quote-section__attribution">
+            — Eihei Dogen, <cite>Genjo Koan</cite> (1233)
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Visit ─────────────────────────────────────────────────────── -->
+  <section class="visit-section section">
+    <div class="container">
+      <div class="visit-grid">
+        <div>
+          <span class="section-heading__kicker">Find Us</span>
+          <h2 class="visit-grid__heading">Come and Sit with Us</h2>
+          <p class="visit-grid__body">
+            Stone Gate is open to visitors for morning zazen, Sunday sitting, and extended retreats. Nestled among the hills of Craftsbury Common, the monastery is a two-hour drive from Burlington and three hours from Boston. We ask only that you arrive on time and bring a quiet willingness.
+          </p>
+          <div class="flex-center flex-wrap">
+            <a href={withBase('/contact/')} class="btn btn--dark">Get Directions</a>
+            <a href={withBase('/retreats/')} class="btn btn--ghost-pine">Upcoming Sesshins</a>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&q=80"
+            alt="Forested Vermont hillside in morning mist"
+            class="visit-grid__image"
+            loading="lazy"
+            decoding="async"
+            width="900"
+            height="675"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

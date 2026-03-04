@@ -1,0 +1,30 @@
+{
+  "demo": true,
+  "demoMessage": "Sample template — Stone Gate Monastery is a fictional organisation",
+  "site": {
+    "title": "Stone Gate Zendo",
+    "description": "A Soto Zen monastery in the Green Mountains of Vermont — offering zazen, sesshins, and a life rooted in practice.",
+    "url": "https://username.github.io",
+    "basePath": "",
+    "language": "en"
+  },
+  "navigation": {
+    "main": [
+      { "label": "Home",      "url": "/" },
+      { "label": "Practice",  "url": "/practice/" },
+      { "label": "Retreats",  "url": "/retreats/" },
+      { "label": "Monastery", "url": "/monastery/" },
+      { "label": "Contact",   "url": "/contact/" }
+    ]
+  },
+  "contact": {
+    "address": "147 Ridge Road, Craftsbury Common, VT 05827",
+    "email": "info@stonegatezendo.org",
+    "phone": "+1 (802) 555-0142"
+  },
+  "seo": {
+    "titleTemplate": "%s — Stone Gate Zendo",
+    "ogImage": ""
+  },
+  "jinpaKey": ""
+}

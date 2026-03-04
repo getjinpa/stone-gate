@@ -1,0 +1,45 @@
+---
+import { withBase } from '../../utils/paths';
+
+interface Props {
+  siteConfig: any;
+}
+
+const { siteConfig } = Astro.props;
+const nav     = siteConfig.navigation.main as Array<{ label: string; url: string }>;
+const contact = siteConfig.contact;
+const year    = new Date().getFullYear();
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="site-footer__inner">
+      <!-- Brand + address -->
+      <div>
+        <p class="site-footer__brand">Stone Gate Zendo</p>
+        <p class="site-footer__tagline">Soto Zen · Vermont</p>
+        <address class="site-footer__address">
+          <span>{contact.address}</span><br />
+          <a href={`tel:${contact.phone}`}>{contact.phone}</a><br />
+          <a href={`mailto:${contact.email}`}>{contact.email}</a>
+        </address>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <p class="site-footer__nav-title">Navigate</p>
+        <nav class="site-footer__nav" aria-label="Footer navigation">
+          {nav.map(item => (
+            <a href={withBase(item.url)}>{item.label}</a>
+          ))}
+        </nav>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="site-footer__bottom">
+      <span>&copy; {year} Stone Gate Zendo. All rights reserved.</span>
+      <span>Built with <a href="https://getjinpa.github.io" target="_blank" rel="noopener noreferrer">Jinpa</a></span>
+    </div>
+  </div>
+</footer>
