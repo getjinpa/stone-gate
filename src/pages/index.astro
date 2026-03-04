@@ -10,7 +10,7 @@ import { siteConfig } from '../utils/config';
 >
   <!-- ── Hero ─────────────────────────────────────────────────────── -->
   <section class="hero" aria-label="Welcome to Stone Gate Zendo">
-    <div class="hero__bg" role="img" aria-label="Mountain forest at dawn"></div>
+    <div class="hero__bg" role="img" aria-label="Mountain forest at dawn" style={`background-image: url('${withBase('/images/photo-1506905925346-21bda4d32df4.jpg')}')`}></div>
     <div class="hero__overlay"></div>
 
     <div class="hero__content">
@@ -130,7 +130,7 @@ import { siteConfig } from '../utils/config';
         </div>
         <div>
           <img
-            src="/images/photo-1441974231531-c6227db76b6e.jpg"
+            src={withBase('/images/photo-1441974231531-c6227db76b6e.jpg')}
             alt="Forested Vermont hillside in morning mist"
             class="visit-grid__image"
             loading="lazy"
